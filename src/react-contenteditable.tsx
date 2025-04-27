@@ -49,7 +49,7 @@ export default class ContentEditable extends React.Component<Props> {
         onBlur: this.props.onBlur || this.emitChange,
         onKeyUp: this.props.onKeyUp || this.emitChange,
         onKeyDown: this.props.onKeyDown || this.emitChange,
-        contentEditable: !this.props.disabled,
+        contentEditable: this.props.disabled ? "false" : "plaintext-only",
         dangerouslySetInnerHTML: { __html: html }
       },
       this.props.children);
